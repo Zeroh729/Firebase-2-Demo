@@ -13,5 +13,5 @@ public interface ContentInteractorInterface {
 
     void subscribeToShoutouts(FetchCallback fetchCallback);
 
-    ArrayList<Shoutout> getShoutout(HashMap data);
+    Shoutout getShoutout(HashMap data);
 }

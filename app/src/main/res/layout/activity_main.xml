@@ -1,16 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     tools:context=".usecases.MainActivity">
 
     <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Shout outs goes here"
+        android:background="@android:color/background_light"/>
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/fab_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp"
+        fab:fab_addButtonColorNormal="@color/colorAccent"
+        fab:fab_addButtonColorPressed="@color/colorAccentDark">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_title="Ask a question"
+            fab:fab_colorNormal="@android:color/white"
+            fab:fab_colorPressed="@android:color/secondary_text_dark" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_title="Rate this Slide"
+            fab:fab_colorNormal="@android:color/white"
+            fab:fab_colorPressed="@android:color/secondary_text_dark" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_shoutout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_title="Shoutout your thoughts"
+            fab:fab_colorNormal="@android:color/white"
+            fab:fab_colorPressed="@android:color/secondary_text_dark" />
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
 </RelativeLayout>

@@ -35,7 +35,7 @@ public class ContentPresenter {
             @Override
             public void onSuccess(HashMap data) {
                 if(screen.isStatusbarIsEmpty()) {
-                    screen.showShoutout(system.getShoutout(data));
+                    screen.showNewShoutout(system.getShoutout(data));
                 }
             }
 

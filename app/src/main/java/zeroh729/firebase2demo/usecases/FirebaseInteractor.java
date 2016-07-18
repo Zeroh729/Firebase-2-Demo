@@ -10,8 +10,10 @@ import zeroh729.firebase2demo.interfaces.TaskCallback;
 import zeroh729.firebase2demo.models.Question;
 import zeroh729.firebase2demo.models.Shoutout;
 import zeroh729.firebase2demo.models.SlideRating;
+import zeroh729.firebase2demo.models.User;
 import zeroh729.firebase2demo.usecases.authentication.interfaces.AuthenticationInteractorInterface;
 import zeroh729.firebase2demo.usecases.contentsubscriber.interfaces.ContentInteractorInterface;
+import zeroh729.firebase2demo.usecases.navigation.interfaces.NavigationInteractorInterface;
 import zeroh729.firebase2demo.usecases.sendfeedback.interfaces.SendFeedbackInteractorInterface;
 
 public class FirebaseInteractor {
@@ -20,6 +22,14 @@ public class FirebaseInteractor {
         @Override
         public void loginWithGoogleAccount(Intent data, TaskCallback callback) {
 
+        }
+    }
+
+    public static class NavigationInteractor implements NavigationInteractorInterface{
+
+        @Override
+        public User getUser() {
+            return null;
         }
     }
 

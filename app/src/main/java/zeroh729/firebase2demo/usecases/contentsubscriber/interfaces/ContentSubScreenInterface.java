@@ -8,7 +8,7 @@ public interface ContentSubScreenInterface {
     void displaySlideNumber(int slideNumber);
     void showError(int errorCode);
 
-    void showShoutout(ArrayList<Shoutout> shoutOuts);
+    void showNewShoutout(Shoutout shoutOuts);
 
     boolean isStatusbarIsEmpty();
 }
