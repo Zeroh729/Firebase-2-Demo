@@ -7,6 +7,19 @@
     xmlns:fab="http://schemas.android.com/apk/res-auto"
     tools:context=".usecases.MainActivity">
 
+    <zeroh729.firebase2demo.usecases.minoritycontest.QnaScreen_
+        android:id="@+id/layout_contest_qna"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="64dp"/>
+
+    <zeroh729.firebase2demo.usecases.minoritycontest.ResultsScreen
+        android:id="@+id/layout_contest_results"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="64dp"
+        android:visibility="invisible"/>
+
     <TextView
         android:id="@+id/tv_status"
         android:layout_width="match_parent"

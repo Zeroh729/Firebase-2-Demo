@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your answer is:"/>
+
+    <TextView
+        android:id="@+id/tv_answer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.3"
+        android:text="D. walk around naked"/>
+
+    <TextView
+        android:id="@+id/tv_cancelAnswer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:layout_gravity="right"
+        android:text="cancel answer"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="32dp"
+        android:layout_weight="1">
+        <TableRow
+            android:layout_weight="1"
+            android:gravity="center_horizontal">
+            <ProgressBar
+                android:id="@+id/pb_a"
+                style="@style/choicesGraphBar"/>
+            <ProgressBar
+                android:id="@+id/pb_b"
+                style="@style/choicesGraphBar"/>
+            <ProgressBar
+                android:id="@+id/pb_c"
+                style="@style/choicesGraphBar"/>
+            <ProgressBar
+                android:id="@+id/pb_d"
+                style="@style/choicesGraphBar"/>
+        </TableRow>
+        <TableRow
+            android:id="@+id/tr_labels"
+            android:gravity="center_horizontal">
+            <TextView android:text="B"
+                style="@style/choicesLabel"/>
+            <TextView android:text="A"
+                style="@style/choicesLabel"/>
+            <TextView android:text="C"
+                style="@style/choicesLabel"/>
+            <TextView android:text="D"
+                style="@style/choicesLabel"/>
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

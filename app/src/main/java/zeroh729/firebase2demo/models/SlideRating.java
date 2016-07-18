@@ -3,7 +3,7 @@ package zeroh729.firebase2demo.models;
 public class SlideRating {
     private String username;
     private String time;
-    private int rating;
+    private float rating;
 
     public String getUsername() {
         return username;
@@ -21,11 +21,11 @@ public class SlideRating {
         this.time = time;
     }
 
-    public int getRating() {
+    public float getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(float rating) {
         this.rating = rating;
     }
 }

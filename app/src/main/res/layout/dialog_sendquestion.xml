@@ -12,7 +12,7 @@
         android:text="Question"/>
 
     <EditText
-        android:id="@+id/et_shoutout"
+        android:id="@+id/et_question"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/tv_title"

@@ -9,6 +9,7 @@ import zeroh729.firebase2demo.usecases.networksubscriber.NetworkInteractor;
 import zeroh729.firebase2demo.usecases.networksubscriber.interfaces.NetworkInteractorInterface;
 import zeroh729.firebase2demo.usecases.sendfeedback.interfaces.SendFeedbackInteractorInterface;
 import zeroh729.firebase2demo.usecases.sendfeedback.interfaces.SendFeedbackScreenInterface;
+import zeroh729.firebase2demo.utils.DateUtil;
 
 public class SendFeedbackPresenter {
     private SendFeedbackScreenInterface screen;
@@ -35,7 +36,7 @@ public class SendFeedbackPresenter {
         });
     }
 
-    public void onClickSendSlideRating(int rating){
+    public void onClickSendSlideRating(float rating){
         system.sendSlideRating(createRating(rating), new TaskCallback(){
 
             @Override
@@ -73,7 +74,7 @@ public class SendFeedbackPresenter {
         return shoutout;
     }
 
-    private SlideRating createRating(int rating){
+    private SlideRating createRating(float rating){
         SlideRating slideRating = new SlideRating();
         slideRating.setRating(rating);
         slideRating.setTime(getTimeNow());
@@ -92,6 +93,6 @@ public class SendFeedbackPresenter {
     }
 
     private String getTimeNow(){
-        return "MMMM dd, yyyy HH:mm:ss:aa";
+        return DateUtil.getTimeNowMMMMddyyyyHHmmssaa();
     }
 }

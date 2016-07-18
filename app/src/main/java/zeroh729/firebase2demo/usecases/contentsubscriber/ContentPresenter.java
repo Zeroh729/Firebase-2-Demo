@@ -2,6 +2,7 @@ package zeroh729.firebase2demo.usecases.contentsubscriber;
 
 import java.util.HashMap;
 
+import zeroh729.firebase2demo.interfaces.DoneCallback;
 import zeroh729.firebase2demo.interfaces.FetchCallback;
 import zeroh729.firebase2demo.usecases.FirebaseInteractor;
 import zeroh729.firebase2demo.usecases.contentsubscriber.interfaces.ContentInteractorInterface;
@@ -14,20 +15,6 @@ public class ContentPresenter {
     public ContentPresenter(ContentSubScreenInterface screen) {
         this.screen = screen;
         system = new FirebaseInteractor.ContentInteractor();
-    }
-
-    public void subscribeToCurrentSlideNumber(){
-        system.subscribeToCurrentSlideNumber(new FetchCallback(){
-            @Override
-            public void onSuccess(HashMap data) {
-                screen.displaySlideNumber(system.getSlideNumber(data));
-            }
-
-            @Override
-            public void onFail(int errorCode) {
-                screen.showError(errorCode);
-            }
-        });
     }
 
     public void subscribeToShoutouts(){

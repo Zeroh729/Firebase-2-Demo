@@ -6,4 +6,24 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="choiceButtonStyle">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="choicesGraphBar" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:progressDrawable">@drawable/progressbar_vertical</item>
+    </style>
+
+    <style name="choicesLabel">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+    </style>
+
 </resources>

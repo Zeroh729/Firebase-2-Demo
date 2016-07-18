@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:id="@+id/tv_question"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="What would you do when"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:layout_weight="1"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <TableRow
+            android:layout_weight="1">
+            <Button
+                android:id="@+id/btn_a"
+                style="@style/choiceButtonStyle"/>
+            <Button
+                android:id="@+id/btn_b"
+                style="@style/choiceButtonStyle"/>
+        </TableRow>
+        <TableRow
+            android:layout_weight="1">
+            <Button
+                android:id="@+id/btn_c"
+                style="@style/choiceButtonStyle"/>
+            <Button
+                android:id="@+id/btn_d"
+                style="@style/choiceButtonStyle"/>
+        </TableRow>
+    </TableLayout>
+
+</merge>

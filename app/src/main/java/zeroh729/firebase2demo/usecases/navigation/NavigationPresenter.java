@@ -1,6 +1,7 @@
 package zeroh729.firebase2demo.usecases.navigation;
 
 import zeroh729.firebase2demo.models.User;
+import zeroh729.firebase2demo.usecases.FirebaseInteractor;
 import zeroh729.firebase2demo.usecases.navigation.interfaces.NavigationInteractorInterface;
 import zeroh729.firebase2demo.usecases.navigation.interfaces.NavigationScreenInterface;
 
@@ -10,13 +11,14 @@ public class NavigationPresenter {
 
     public NavigationPresenter(NavigationScreenInterface screen){
         this.screen = screen;
+        system = new FirebaseInteractor.NavigationInteractor();
     }
 
     public void onClickMenu(){
         if(system.getUser() == null)
-            screen.displayMenuList();
-        else
             screen.displayLogin();
+        else
+            screen.displayMenuList();
     }
 
     public void onClickQuestion(){

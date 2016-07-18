@@ -12,7 +12,7 @@ public class NetworkPresenter {
         system = new NetworkInteractor();
     }
 
-    public void subscribe(){
+    public void subscribeToNetworkState(){
         system.subscribe(new NetworkInteractorInterface.Callback() {
             @Override
             public void onConnected() {
