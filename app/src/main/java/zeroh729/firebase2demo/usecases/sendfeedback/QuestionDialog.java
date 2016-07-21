@@ -9,6 +9,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 
 import zeroh729.firebase2demo.R;
+import zeroh729.firebase2demo.models.User;
 
 public class QuestionDialog extends Dialog {
     private SendFeedbackPresenter presenter;
@@ -16,6 +17,7 @@ public class QuestionDialog extends Dialog {
     private CheckBox cb_private;
     private EditText et_contactInfo;
     private Button btn_send;
+    private User user;
 
     public QuestionDialog(Context context, SendFeedbackPresenter presenter) {
         super(context);
@@ -39,9 +41,12 @@ public class QuestionDialog extends Dialog {
                                                 cb_private.isChecked());
             }
         });
+        if(user != null){
+            et_contactInfo.setText(user.getContactInfo());
+        }
     }
 
-    public void setContactInfo(String contactInfo){
-        et_contactInfo.setText(contactInfo);
+    public void setUser(User user){
+        this.user = user;
     }
 }

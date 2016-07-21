@@ -8,8 +8,7 @@ import zeroh729.firebase2demo.usecases.networksubscriber.interfaces.NetworkInter
 import zeroh729.firebase2demo.utils.NetworkUtil;
 
 public class NetworkInteractor extends BroadcastReceiver implements NetworkInteractorInterface {
-    private Callback callback;
-    private int status = NetworkUtil.STATUS_CONNECTING;
+    private static Callback callback;
 
     @Override
     public void subscribe(Callback callback) {
@@ -23,31 +22,32 @@ public class NetworkInteractor extends BroadcastReceiver implements NetworkInter
 
     @Override
     public boolean isConnected() {
-        return status == NetworkUtil.STATUS_CONNECTED ? true : false;
+        return NetworkUtil.getConnectionStatus() == NetworkUtil.STATUS_CONNECTED;
     }
 
     @Override
     public boolean isConnecting() {
-        return status == NetworkUtil.STATUS_CONNECTING? true : false;
+        return NetworkUtil.getConnectionStatus() == NetworkUtil.STATUS_CONNECTING;
     }
 
     @Override
     public boolean isDisconnected() {
-        return status == NetworkUtil.STATUS_DISCONNECTED? true : false;
+        return NetworkUtil.getConnectionStatus() == NetworkUtil.STATUS_DISCONNECTED;
     }
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        switch(NetworkUtil.getConnectionStatus(context)){
-            case NetworkUtil.STATUS_CONNECTED:
-                callback.onConnected();
-                break;
-            case NetworkUtil.STATUS_CONNECTING:
-                callback.onConnecting();
-                break;
-            default:
-                callback.onDisconnect();
-                break;
-        }
+        if(callback != null)
+            switch(NetworkUtil.getConnectionStatus()){
+                case NetworkUtil.STATUS_CONNECTED:
+                    callback.onConnected();
+                    break;
+                case NetworkUtil.STATUS_CONNECTING:
+                    callback.onConnecting();
+                    break;
+                default:
+                    callback.onDisconnect();
+                    break;
+            }
     }
 }

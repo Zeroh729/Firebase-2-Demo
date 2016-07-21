@@ -21,9 +21,9 @@ public class ContentPresenter {
         system.subscribeToShoutouts(new FetchCallback(){
             @Override
             public void onSuccess(HashMap data) {
-                if(screen.isStatusbarIsEmpty()) {
+//                if(screen.isStatusbarIsEmpty()) {
                     screen.showNewShoutout(system.getShoutout(data));
-                }
+//                }
             }
 
             @Override

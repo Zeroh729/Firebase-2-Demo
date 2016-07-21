@@ -1,5 +1,7 @@
 package zeroh729.firebase2demo.usecases.minoritycontest.interfaces;
 
+import org.androidannotations.annotations.EBean;
+
 import zeroh729.firebase2demo.models.MinoryContest;
 
 public interface ContestScreenInterface {

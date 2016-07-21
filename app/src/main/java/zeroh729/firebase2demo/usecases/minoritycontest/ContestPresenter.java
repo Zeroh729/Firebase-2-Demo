@@ -1,8 +1,12 @@
 package zeroh729.firebase2demo.usecases.minoritycontest;
 
+import org.androidannotations.annotations.Bean;
+
 import java.util.HashMap;
 
 import zeroh729.firebase2demo.interfaces.FetchCallback;
+import zeroh729.firebase2demo.interfaces.TaskCallback;
+import zeroh729.firebase2demo.models.MinoryContest;
 import zeroh729.firebase2demo.usecases.FirebaseInteractor;
 import zeroh729.firebase2demo.usecases.minoritycontest.interfaces.ContestInteractorInterface;
 import zeroh729.firebase2demo.usecases.minoritycontest.interfaces.ContestScreenInterface;
@@ -14,6 +18,14 @@ public class ContestPresenter {
     public ContestPresenter(ContestScreenInterface screen){
         this.screen = screen;
         system = new FirebaseInteractor.ContestInteractor();
+    }
+
+    public void onLoadApp(){
+        if(system.isGameRunning() && system.readLocalAnswer().equals("")){
+            screen.displayQnaScreen();
+        }else{
+            screen.displayGraphScreen();
+        }
     }
 
     public void onAnswer(String answer){
@@ -29,14 +41,10 @@ public class ContestPresenter {
     }
 
     public void subscribeToContest(){
-        system.subscribeToContestData(new FetchCallback() {
+        system.subscribeToContestData(new TaskCallback() {
             @Override
-            public void onSuccess(HashMap data) {
-                if(system.isGameRunning(data)) {
-                    screen.updateContestViews(system.getContestData(data));
-                }else{
-                    screen.displayGameOver();
-                }
+            public void onSuccess() {
+                screen.updateContestViews(system.getContestData());
             }
 
             @Override
@@ -44,5 +52,9 @@ public class ContestPresenter {
                 screen.showError(errorCode);
             }
         });
+    }
+
+    public MinoryContest getContestData() {
+        return system.getContestData();
     }
 }

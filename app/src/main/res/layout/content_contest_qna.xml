@@ -4,7 +4,7 @@
         android:id="@+id/tv_question"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="What would you do when"
+        android:text="Loading..."
         android:textSize="24sp"
         android:gravity="center"
         android:layout_weight="1"/>

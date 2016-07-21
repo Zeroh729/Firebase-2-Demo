@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:padding="8dp">
 
     <TextView
@@ -14,37 +14,38 @@
     <EditText
         android:id="@+id/et_question"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/tv_title"
-        android:layout_above="@+id/cb_private"/>
+        android:layout_height="200dp"
+        android:gravity="left|top|start"
+        android:layout_below="@id/tv_title"/>
 
     <CheckBox
         android:id="@+id/cb_private"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="send as a private message"
-        android:layout_above="@+id/et_contactInfo"/>
+        android:layout_below="@id/et_question"/>
 
     <TextView
         android:id="@+id/tvlabel_contactInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="How will I contact you?"
-        android:layout_above="@+id/btn_send"/>
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/cb_private"/>
     <EditText
         android:id="@+id/et_contactInfo"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Just incase Q&amp;A time runs out."
-        android:layout_toRightOf="@id/tvlabel_contactInfo"
-        android:layout_above="@+id/btn_send"/>
+        android:layout_below="@id/tvlabel_contactInfo"/>
 
     <Button
         android:id="@+id/btn_send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rate!"
-        android:layout_alignParentBottom="true"
+        android:text="Send!"
+        android:layout_marginTop="12dp"
+        android:layout_below="@id/et_contactInfo"
         android:layout_alignParentRight="true"/>
 
 </RelativeLayout>

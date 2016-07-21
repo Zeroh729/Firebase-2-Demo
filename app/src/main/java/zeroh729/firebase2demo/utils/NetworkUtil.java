@@ -4,6 +4,8 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+import zeroh729.firebase2demo.Firebase2Demo;
+
 public class NetworkUtil {
     public final static int TYPE_NOT_CONNECTED = 0;
     public final static int TYPE_WIFI = 1;
@@ -28,8 +30,8 @@ public class NetworkUtil {
         return TYPE_NOT_CONNECTED;
     }
 
-    public static int getConnectionStatus(Context context) {
-        ConnectivityManager cm = (ConnectivityManager) context
+    public static int getConnectionStatus() {
+        ConnectivityManager cm = (ConnectivityManager) Firebase2Demo.getContext()
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
 
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();

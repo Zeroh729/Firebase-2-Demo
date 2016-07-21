@@ -11,9 +11,10 @@
         android:id="@+id/layout_contest_qna"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="64dp"/>
+        android:layout_marginBottom="64dp"
+        android:visibility="invisible"/>
 
-    <zeroh729.firebase2demo.usecases.minoritycontest.ResultsScreen
+    <zeroh729.firebase2demo.usecases.minoritycontest.ResultsScreen_
         android:id="@+id/layout_contest_results"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -37,8 +38,18 @@
         android:layout_marginBottom="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginEnd="8dp"
+        fab:fab_labelsPosition="left"
+        fab:fab_labelStyle="@style/menu_labels_style"
         fab:fab_addButtonColorNormal="@color/colorAccent"
         fab:fab_addButtonColorPressed="@color/colorAccentDark">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_shoutout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_title="Shoutout your thoughts"
+            fab:fab_colorNormal="@android:color/white"
+            fab:fab_colorPressed="@android:color/secondary_text_dark" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_question"
@@ -54,15 +65,8 @@
             android:layout_height="wrap_content"
             fab:fab_title="Rate this Slide"
             fab:fab_colorNormal="@android:color/white"
-            fab:fab_colorPressed="@android:color/secondary_text_dark" />
-
-        <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_shoutout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            fab:fab_title="Shoutout your thoughts"
-            fab:fab_colorNormal="@android:color/white"
-            fab:fab_colorPressed="@android:color/secondary_text_dark" />
+            fab:fab_colorPressed="@android:color/secondary_text_dark"
+            android:visibility="gone"/>
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 </RelativeLayout>

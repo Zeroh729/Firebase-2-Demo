@@ -9,5 +9,5 @@ import zeroh729.firebase2demo.models.Shoutout;
 
 public interface ContentInteractorInterface {
     void subscribeToShoutouts(FetchCallback fetchCallback);
-    Shoutout getShoutout(HashMap data);
+    Shoutout getShoutout(HashMap<String, String> data);
 }

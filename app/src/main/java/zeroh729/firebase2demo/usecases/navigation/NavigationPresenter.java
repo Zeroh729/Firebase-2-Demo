@@ -15,7 +15,7 @@ public class NavigationPresenter {
     }
 
     public void onClickMenu(){
-        if(system.getUser() == null)
+        if(system.getUser().getId() == null)
             screen.displayLogin();
         else
             screen.displayMenuList();

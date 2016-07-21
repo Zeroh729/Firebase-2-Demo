@@ -4,6 +4,9 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Your answer is:"/>
@@ -12,8 +15,12 @@
         android:id="@+id/tv_answer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.3"
-        android:text="D. walk around naked"/>
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:gravity="center"
+        android:layout_weight="0.2"
+        android:textSize="22sp"
+        android:text=""/>
 
     <TextView
         android:id="@+id/tv_cancelAnswer"
@@ -47,13 +54,21 @@
         <TableRow
             android:id="@+id/tr_labels"
             android:gravity="center_horizontal">
-            <TextView android:text="B"
+            <TextView
+                android:id="@+id/tv_1"
+                android:text="B"
                 style="@style/choicesLabel"/>
-            <TextView android:text="A"
+            <TextView
+                android:id="@+id/tv_2"
+                android:text="A"
                 style="@style/choicesLabel"/>
-            <TextView android:text="C"
+            <TextView
+                android:id="@+id/tv_3"
+                android:text="C"
                 style="@style/choicesLabel"/>
-            <TextView android:text="D"
+            <TextView
+                android:id="@+id/tv_4"
+                android:text="D"
                 style="@style/choicesLabel"/>
         </TableRow>
     </TableLayout>

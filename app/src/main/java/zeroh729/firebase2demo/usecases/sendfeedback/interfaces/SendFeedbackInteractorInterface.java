@@ -9,10 +9,6 @@ public interface SendFeedbackInteractorInterface {
 
     void sendMessage(Shoutout message, TaskCallback taskCallback);
 
-    void sendSlideRating(int rating);
-
-    void sendQuestion(String question, String contactInfo, boolean isPublic);
-
     String getUsername();
 
     void sendQuestion(Question question, TaskCallback callback);

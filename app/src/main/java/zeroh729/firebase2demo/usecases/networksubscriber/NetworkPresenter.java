@@ -8,30 +8,30 @@ public class NetworkPresenter {
     private NetworkInteractorInterface system;
 
     public NetworkPresenter(NetworkSubScreenInterface screen){
-        this.screen = screen;
-        system = new NetworkInteractor();
+//        this.screen = screen;
+//        system = new NetworkInteractor();
     }
 
     public void subscribeToNetworkState(){
-        system.subscribe(new NetworkInteractorInterface.Callback() {
-            @Override
-            public void onConnected() {
-                screen.displayConnectedStatus();
-            }
-
-            @Override
-            public void onConnecting() {
-                screen.displayConnectingStatus();
-            }
-
-            @Override
-            public void onDisconnect() {
-                screen.displayDisconnectedStatus();
-            }
-        });
+//        system.subscribe(new NetworkInteractorInterface.Callback() {
+//            @Override
+//            public void onConnected() {
+//                screen.displayConnectedStatus();
+//            }
+//
+//            @Override
+//            public void onConnecting() {
+//                screen.displayConnectingStatus();
+//            }
+//
+//            @Override
+//            public void onDisconnect() {
+//                screen.displayDisconnectedStatus();
+//            }
+//        });
     }
 
     public void unsubscribe(){
-        system.unsubscribe();
+//        system.unsubscribe();
     }
 }
